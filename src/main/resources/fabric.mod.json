@@ -3,15 +3,15 @@
 	"id": "testmod",
 	"version": "${version}",
 	"name": "TestMod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "TestTestTestrogen",
 	"authors": [
-		"Me!"
+		"Aurea"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/AuricLight/Fabric-Tutorial-1.20.1"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/testmod/icon.png",
 	"environment": "*",
 	"entrypoints": {
