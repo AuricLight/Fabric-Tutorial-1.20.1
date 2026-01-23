@@ -1,6 +1,7 @@
 package net.aurea.testmod.item;
 
 import net.aurea.testmod.TestMod;
+import net.aurea.testmod.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -17,8 +18,11 @@ public class ModItemGroups {
                 .icon(() -> new ItemStack(ModItems.BloodIronIngot)).entries((displayContext, entries) -> {
                         entries.add(ModItems.BloodIronNugget);
                         entries.add(ModItems.BloodIronIngot);
-                        entries.add(Items.IRON_HELMET);
 
+                        entries.add(ModBlocks.BLOODIRON_BLOCK);
+                        entries.add(ModBlocks.BLOODIRON_GRATE);
+
+                        entries.add(Items.IRON_HELMET);
                     }).build());
 
 

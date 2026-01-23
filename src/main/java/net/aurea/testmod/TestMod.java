@@ -1,5 +1,6 @@
 package net.aurea.testmod;
 
+import net.aurea.testmod.block.ModBlocks;
 import net.aurea.testmod.item.ModItemGroups;
 import net.aurea.testmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -21,6 +22,7 @@ public class TestMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
 	}
 }

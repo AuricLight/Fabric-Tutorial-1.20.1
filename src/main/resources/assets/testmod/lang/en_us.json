@@ -2,5 +2,8 @@
   "item.testmod.bloodiron_ingot": "Blood Iron Ingot",
   "item.testmod.bloodiron_nugget": "Blood Iron Nugget",
 
-  "itemgroup.bloodiron": "Blood Iron Tutorial"
+  "itemgroup.bloodiron": "Blood Iron Tutorial",
+
+  "block.testmod.bloodiron_block": "Blood Iron Block",
+  "block.testmod.bloodiron_grate": "Blood Iron Grate"
 }
