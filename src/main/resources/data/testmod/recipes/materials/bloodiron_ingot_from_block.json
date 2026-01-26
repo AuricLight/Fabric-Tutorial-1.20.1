@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "testmod:bloodiron_block"
+    }
+  ],
+  "result": {
+    "item": "testmod:bloodiron_ingot",
+    "count": 9
+  }
+
+}

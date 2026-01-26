@@ -15,11 +15,13 @@ public class ModItems {
     //Declare the item
     public static final Item BloodIronIngot = registerItem("bloodiron_ingot", new Item(new FabricItemSettings()));
     public static final Item BloodIronNugget = registerItem("bloodiron_nugget", new Item(new FabricItemSettings()));
+    public static final Item BloodClot = registerItem("tartarus_blood_clot", new Item(new FabricItemSettings()));
 
     // Add items to vanilla tabs
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries ) {
         entries.add(BloodIronIngot);
         entries.add(BloodIronNugget);
+        entries.add(BloodClot);
     }
 
 

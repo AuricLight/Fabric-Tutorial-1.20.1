@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "testmod:bloodiron_nugget",
+  "ingredient": {
+    "item": "testmod:bloodiron_grate"
+  },
+  "result": "testmod:bloodiron_nugget"
+}

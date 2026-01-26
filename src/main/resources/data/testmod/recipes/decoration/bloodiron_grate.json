@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "#n#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "testmod:bloodiron_ingot"
+    },
+    "n": {
+      "item": "testmod:bloodiron_nugget"
+    }
+  },
+  "result": {
+    "item": "testmod:bloodiron_grate"
+  }
+
+}

@@ -18,7 +18,9 @@ public class ModItemGroups {
                 .icon(() -> new ItemStack(ModItems.BloodIronIngot)).entries((displayContext, entries) -> {
                         entries.add(ModItems.BloodIronNugget);
                         entries.add(ModItems.BloodIronIngot);
+                        entries.add(ModItems.BloodClot);
 
+                        entries.add(ModBlocks.BLOOD_ORE);
                         entries.add(ModBlocks.BLOODIRON_BLOCK);
                         entries.add(ModBlocks.BLOODIRON_GRATE);
 
