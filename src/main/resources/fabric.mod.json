@@ -18,6 +18,9 @@
 		"main": [
 			"net.aurea.testmod.TestMod"
 		],
+		"client": [
+			"net.aurea.testmod.TestModClient"
+		],
 		"fabric-datagen": [
 			"net.aurea.testmod.TestModDataGenerator"
 		]

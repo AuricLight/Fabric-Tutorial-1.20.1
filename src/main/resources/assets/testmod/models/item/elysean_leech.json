@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "testmod:item/elysean_leech_dormant"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "testmod:awoken": 1
+      },
+      "model": "testmod:item/elysean_leech_awoken"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 package net.aurea.testmod.item;
 
 import net.aurea.testmod.TestMod;
+import net.aurea.testmod.item.custom.ElyseanLeechItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -16,12 +17,15 @@ public class ModItems {
     public static final Item BloodIronIngot = registerItem("bloodiron_ingot", new Item(new FabricItemSettings()));
     public static final Item BloodIronNugget = registerItem("bloodiron_nugget", new Item(new FabricItemSettings()));
     public static final Item BloodClot = registerItem("tartarus_blood_clot", new Item(new FabricItemSettings()));
+    public static final Item ElyseanLeech = registerItem("elysean_leech", new ElyseanLeechItem(new FabricItemSettings().maxCount(1).maxDamage(69)));
 
     // Add items to vanilla tabs
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries ) {
         entries.add(BloodIronIngot);
         entries.add(BloodIronNugget);
         entries.add(BloodClot);
+
+        entries.add(ElyseanLeech);
     }
 
 

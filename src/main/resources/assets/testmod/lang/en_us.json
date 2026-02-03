@@ -3,9 +3,17 @@
   "item.testmod.bloodiron_nugget": "Blood Iron Nugget",
   "item.testmod.tartarus_blood_clot": "Tartarus Blood Clot",
 
+  "item.testmod.elysean_leech": "Elysean Leech",
+
   "itemgroup.bloodiron": "Blood Iron Tutorial",
 
   "block.testmod.bloodiron_block": "Blood Iron Block",
   "block.testmod.bloodiron_grate": "Blood Iron Grate",
-  "block.testmod.blood_ore": "Tartarus Blood Ore"
+  "block.testmod.blood_ore": "Tartarus Blood Ore",
+
+  "effect.testmod.bleeding": "Bleeding",
+  "death.attack.bleedout": "%s was left without a drop of blood in their system",
+
+  "tooltip.tutorialmod.elysean_leech.tooltip" : "Turns your blood into healing. ",
+  "tooltip.tutorialmod.elysean_leech.charge": "Charges: %d / %d"
 }

@@ -1,8 +1,11 @@
 package net.aurea.testmod;
 
 import net.aurea.testmod.block.ModBlocks;
+import net.aurea.testmod.entity.effect.ModStatusEffect;
 import net.aurea.testmod.item.ModItemGroups;
 import net.aurea.testmod.item.ModItems;
+import net.aurea.testmod.particle.ModParticles;
+import net.aurea.testmod.util.ModDamageTypes;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -24,5 +27,8 @@ public class TestMod implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
+
+		ModStatusEffect.registerModStatusEffects();
+		ModParticles.registerParticles();
 	}
 }

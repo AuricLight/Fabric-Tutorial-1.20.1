@@ -20,6 +20,8 @@ public class ModItemGroups {
                         entries.add(ModItems.BloodIronIngot);
                         entries.add(ModItems.BloodClot);
 
+                        entries.add(ModItems.ElyseanLeech);
+
                         entries.add(ModBlocks.BLOOD_ORE);
                         entries.add(ModBlocks.BLOODIRON_BLOCK);
                         entries.add(ModBlocks.BLOODIRON_GRATE);
