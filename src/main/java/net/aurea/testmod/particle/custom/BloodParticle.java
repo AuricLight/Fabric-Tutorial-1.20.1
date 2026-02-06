@@ -6,6 +6,8 @@ import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particle.DefaultParticleType;
 
+import java.util.Random;
+
 
 public class BloodParticle extends SpriteBillboardParticle {
 
@@ -19,7 +21,9 @@ public class BloodParticle extends SpriteBillboardParticle {
         this.y=dir_y;
         this.z=dir_z;
 
-        this.scale *= 0.75f;
+        this.gravityStrength = 1f;
+        this.scale *= new Random().nextFloat(1f, 1.4f);
+
         this.maxAge = 20;
         this.setSpriteForAge(spriteSheet);
 
@@ -28,6 +32,8 @@ public class BloodParticle extends SpriteBillboardParticle {
         this.blue=0f;
 
     }
+
+    //Credit to roseisproot: https://www.curseforge.com/members/roseisproot/projects  |   https://modrinth.com/user/RoseIsProot
 
     @Override
     public ParticleTextureSheet getType() {
@@ -57,7 +63,7 @@ public class BloodParticle extends SpriteBillboardParticle {
     }
 
     private void fadeOut(){
-        this.alpha = (-1/((float)maxAge) * age + 1);
+        this.scale *= (-1/((float)maxAge*3) * age + 1);
     }
 
 

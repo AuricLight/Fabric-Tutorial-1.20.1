@@ -36,7 +36,7 @@ public class ElyseanLeechItem extends Item {
     }
 
     //Max charge that can be held by the item
-    private final int maxCharge=6;
+    private final int maxCharge=20;
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
@@ -44,9 +44,10 @@ public class ElyseanLeechItem extends Item {
         if (!world.isClient) { //Is the server executing this?
             NbtCompound data = stack.getOrCreateNbt();
             boolean isAwake = data.getBoolean("Awake");
+            long timeWhenUsed = data.getLong("TimeWhenUsed");
 
             // For every 4 seconds like this (80 ticks), execute
-            if(isAwake && entity.isPlayer() && (world.getTime()%80==0)){
+            if(isAwake && entity.isPlayer() && ((world.getTime()-timeWhenUsed)%80==0)){
                 PlayerEntity user = (PlayerEntity) entity;
                  //user.sendMessage(Text.literal("4s have passed, executing code"));
 
@@ -99,6 +100,7 @@ public class ElyseanLeechItem extends Item {
             if (!data.contains("Awake")){
                 data.putBoolean("Awake",true);
                 data.putInt("Charge",0);
+                data.putLong("TimeWhenUsed",world.getTime());
                 return TypedActionResult.success(item);
             } else if (data.getBoolean("Awake")){
                 return ItemUsage.consumeHeldItem(world, user, hand);
@@ -125,9 +127,30 @@ public class ElyseanLeechItem extends Item {
             }
 
             if (!world.isClient) {
-                // Heal whatever is held in the charge amount
-                    //user.sendMessage(Text.literal("HEALHEALHEAL"));
-                user.heal(data.getInt("Charge"));
+                // Heal whatever is held in the charge amount.
+                    //Excess health will be halved and turned into absorption
+                int currentCharge = data.getInt("Charge");
+                float excess= currentCharge - (user.getMaxHealth() - user.getHealth());
+
+                //Can't seem to make a signed float, so this will have to do (no negative absorption)
+                if(excess<0){
+                    excess=0;
+                }
+
+                    //Every time you overheal, you loose 2hp of overheal
+                float originalOverheal;
+                if(user.getAbsorptionAmount()!=0f){
+                    // This formula is done so the amount of absorption lost is proportional to the absorption already had
+                        //If a player (20hp) has already half an hp bar of absorption, then it must lose 4 absorption hp, hence this linear formula.
+                    originalOverheal = user.getAbsorptionAmount()* ( 1 - 12/user.getMaxHealth());
+                } else {
+                    originalOverheal = 0;
+                }
+
+                user.setAbsorptionAmount(excess + originalOverheal);
+                user.heal(currentCharge);
+
+                //user.sendMessage(Text.literal("HEALHEALHEAL"));
             } else {
                 // Show particles to the user
                 showEmoteParticle(world, user);
@@ -181,7 +204,7 @@ public class ElyseanLeechItem extends Item {
         ParticleEffect particleEffect = ParticleTypes.HEART;
 
         for (int i = 0; i < 7; i++) {
-            world.addImportantParticle (particleEffect,
+            world.addParticle (particleEffect,
                     user.getParticleX(1.5),
                     user.getRandomBodyY() + 0.5,
                     user.getParticleZ(1.5),

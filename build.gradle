@@ -57,6 +57,10 @@ java {
 	targetCompatibility = JavaVersion.VERSION_17
 }
 
+loom {
+	accessWidenerPath = file("src/main/resources/testmod.accessWidener")
+}
+
 jar {
 	inputs.property "archivesName", project.base.archivesName
 
