@@ -1,12 +1,11 @@
 package net.aurea.testmod.block;
 
 import net.aurea.testmod.TestMod;
+import net.aurea.testmod.block.custom.GrateBlock;
+import net.aurea.testmod.block.custom.SoulCrucibleBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.ExperienceDroppingBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -21,17 +20,29 @@ public class ModBlocks {
     public static final Block BLOODIRON_BLOCK = registerBlock("bloodiron_block",
             new Block(AbstractBlock.Settings.
                     copy(Blocks.IRON_BLOCK)
-                    .strength(3.5F, 1.5F)));;
+                    .strength(3.5F, 1.5F)
+                    .mapColor(MapColor.DULL_PINK)));;
     public static final Block BLOODIRON_GRATE = registerBlock("bloodiron_grate",
-            new Block(AbstractBlock.Settings.
+            new GrateBlock(AbstractBlock.Settings.
                     copy(Blocks.IRON_BARS)
-                    .strength(2.4F, 1.0F)));
+                    .strength(2.4F, 1.0F)
+                    .mapColor(MapColor.DULL_PINK)));
     // ORES
     public static final Block BLOOD_ORE = registerBlock("blood_ore",
             new ExperienceDroppingBlock(AbstractBlock.Settings.
                     copy(Blocks.NETHER_GOLD_ORE)
                     .sounds(BlockSoundGroup.SHROOMLIGHT),
                 UniformIntProvider.create(0,1)));
+
+
+    // Crafting stations
+    public static final Block SOUL_CRUCIBLE = registerBlock("soul_crucible",
+            new SoulCrucibleBlock(AbstractBlock.Settings
+                    .copy(Blocks.COPPER_BLOCK)
+                    .nonOpaque()
+                    .mapColor(MapColor.DARK_AQUA)));
+
+
 
 
     private static Block registerBlock(String name, Block block) {

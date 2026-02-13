@@ -11,6 +11,8 @@
   "block.testmod.bloodiron_grate": "Blood Iron Grate",
   "block.testmod.blood_ore": "Tartarus Blood Ore",
 
+  "block.testmod.soul_crucible": "Soul Crucible",
+
   "effect.testmod.bleeding": "Bleeding",
   "death.attack.bleedout": "%s was left without a drop of blood in their system",
 

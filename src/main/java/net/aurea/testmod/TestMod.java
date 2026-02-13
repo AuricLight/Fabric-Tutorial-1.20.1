@@ -1,6 +1,7 @@
 package net.aurea.testmod;
 
 import net.aurea.testmod.block.ModBlocks;
+import net.aurea.testmod.block.entity.ModBlockEntities;
 import net.aurea.testmod.entity.effect.ModStatusEffect;
 import net.aurea.testmod.item.ModItemGroups;
 import net.aurea.testmod.item.ModItems;
@@ -25,8 +26,10 @@ public class TestMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		ModItems.registerModItems();
-		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
+
+		ModBlocks.registerModBlocks();
+		ModBlockEntities.registerBlockEntities();
 
 		ModStatusEffect.registerModStatusEffects();
 		ModParticles.registerParticles();

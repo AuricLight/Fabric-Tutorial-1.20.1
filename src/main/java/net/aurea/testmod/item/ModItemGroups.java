@@ -26,7 +26,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.BLOODIRON_BLOCK);
                         entries.add(ModBlocks.BLOODIRON_GRATE);
 
-                        entries.add(Items.IRON_HELMET);
+                        entries.add(ModBlocks.SOUL_CRUCIBLE);
                     }).build());
 
 
