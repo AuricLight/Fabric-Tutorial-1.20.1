@@ -24,7 +24,9 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.BLOOD_ORE);
                         entries.add(ModBlocks.BLOODIRON_BLOCK);
+
                         entries.add(ModBlocks.BLOODIRON_GRATE);
+                        entries.add(ModBlocks.COPPER_CAULDRON);
 
                         entries.add(ModBlocks.SOUL_CRUCIBLE);
                     }).build());

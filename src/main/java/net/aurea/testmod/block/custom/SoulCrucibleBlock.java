@@ -5,8 +5,10 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ItemScatterer;
+import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -14,8 +16,17 @@ import org.jetbrains.annotations.Nullable;
 
 public class SoulCrucibleBlock extends BlockWithEntity implements BlockEntityProvider {
     //Voxel Shape
-    private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
-
+    private static final VoxelShape RAYCAST_SHAPE = createCuboidShape(2.0, 4.0, 2.0, 14.0, 16.0, 14.0);
+    protected static final VoxelShape OUTLINE_SHAPE = VoxelShapes.combineAndSimplify(
+            VoxelShapes.fullCube(),
+            VoxelShapes.union(
+                    createCuboidShape(0.0, 0.0, 4.0, 16.0, 3.0, 12.0),
+                    createCuboidShape(4.0, 0.0, 0.0, 12.0, 3.0, 16.0),
+                    createCuboidShape(4.0, 0.0, 4.0, 12.0, 3.0, 12.0),
+                    RAYCAST_SHAPE
+            ),
+            BooleanBiFunction.ONLY_FIRST
+    );
 
     public SoulCrucibleBlock(Settings settings){
         super(settings);
@@ -24,7 +35,7 @@ public class SoulCrucibleBlock extends BlockWithEntity implements BlockEntityPro
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context){
-        return SHAPE;
+        return OUTLINE_SHAPE;
     }
 
     @Override

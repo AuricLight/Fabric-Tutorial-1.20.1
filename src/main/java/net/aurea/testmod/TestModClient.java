@@ -21,6 +21,8 @@ public class TestModClient implements ClientModInitializer{
 
         // Blocks
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLOODIRON_GRATE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COPPER_CAULDRON, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SOUL_CRUCIBLE, RenderLayer.getCutout());
 
     }
 }
