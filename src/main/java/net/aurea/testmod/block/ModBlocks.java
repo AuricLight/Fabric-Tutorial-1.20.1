@@ -1,13 +1,10 @@
 package net.aurea.testmod.block;
 
 import net.aurea.testmod.TestMod;
-import net.aurea.testmod.block.custom.CopperCauldronBlock;
 import net.aurea.testmod.block.custom.GrateBlock;
 import net.aurea.testmod.block.custom.SoulCrucibleBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -46,21 +43,6 @@ public class ModBlocks {
                     copy(Blocks.IRON_BARS)
                     .strength(2.4F, 1.0F)
                     .mapColor(MapColor.DULL_PINK)));
-    // CAULDRONS
-        // UNOXIDIZED - UNWAXED
-    public static final Block COPPER_CAULDRON = registerBlock("copper_cauldron",
-            new CopperCauldronBlock(AbstractBlock.Settings.
-                    copy(Blocks.CUT_COPPER)
-                    .strength(3.5F, 1.5F)));
-    public static final Block COPPER_CAULDRON_WATER = registerBlock("copper_cauldron_water",
-            new LeveledCauldronBlock(AbstractBlock.Settings.copy(COPPER_CAULDRON), LeveledCauldronBlock.RAIN_PREDICATE, CauldronBehavior.WATER_CAULDRON_BEHAVIOR)
-    );
-    public static final Block COPPER_CAULDRON_LAVA = registerBlock("copper_cauldron_lava",
-            new LavaCauldronBlock(AbstractBlock.Settings.copy(COPPER_CAULDRON).luminance(state -> 15))
-    );
-    public static final Block COPPER_CAULDRON_SNOW = registerBlock("copper_cauldron_snow",
-            new PowderSnowCauldronBlock(AbstractBlock.Settings.copy(COPPER_CAULDRON), LeveledCauldronBlock.SNOW_PREDICATE, CauldronBehavior.POWDER_SNOW_CAULDRON_BEHAVIOR)
-    );
 
 
 

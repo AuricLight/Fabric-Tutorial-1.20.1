@@ -5,7 +5,6 @@ import net.aurea.testmod.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -26,7 +25,6 @@ public class ModItemGroups {
                         entries.add(ModBlocks.BLOODIRON_BLOCK);
 
                         entries.add(ModBlocks.BLOODIRON_GRATE);
-                        entries.add(ModBlocks.COPPER_CAULDRON);
 
                         entries.add(ModBlocks.SOUL_CRUCIBLE);
                     }).build());
